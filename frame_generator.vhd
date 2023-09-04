@@ -141,7 +141,7 @@ begin
         end if;
     end process ; -- frame_generator
 
-    timing_process : process(clk, res) begin
+    timing_process : process(vga_clk, res) begin
         if res = '0' then
             timing <= (others => '0');
         elsif rising_edge (vga_clk) then
