@@ -1,0 +1,3 @@
+[submodule "VGA_driver"]
+	path = VGA_driver
+	url = https://github.com/alanmasu/VGA_driver.git
