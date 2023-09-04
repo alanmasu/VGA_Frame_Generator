@@ -44,7 +44,21 @@ end top_level;
 architecture Behavioral of top_level is
     signal r, g, b : std_logic_vector(3 downto 0);
     signal active, rst: std_logic;
+    signal v_count, h_count : std_logic_vector(9 downto 0);
 begin
+    gen : entity work.frame_generator
+    port map(
+        clk => clk,
+        res => '1',
+        sel => sel,
+        r_out => r,
+        g_out => g,
+        b_out => b,
+        active => active,
+        v_count_in => v_count,
+        h_count_in => h_count
+    );
+
     driver : entity work.vga_driver
     port map(
         clk => clk,
@@ -57,17 +71,9 @@ begin
         b_out => b_out,
         vs => vs,
         hs => hs, 
-        active => active
-    );
-    gen : entity work.frame_generator
-    port map(
-        clk => clk,
-        res => '1',
-        sel => sel,
-        r_out => r,
-        g_out => g,
-        b_out => b,
-        active => active
+        active => active, 
+        v_count_out => v_count,
+        h_count_out => h_count
     );
 
 end Behavioral;
