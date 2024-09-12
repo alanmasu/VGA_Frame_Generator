@@ -6,3 +6,9 @@ Esperienza di laboratorio per la generazione di un immagine su un monitor VGA.
 Creeremo un driver per la VGA e successivamente un frame generator in grado di generare immagini a risoluzione di 640x480 pixel. Inizieremo a generare un immagine con quattro righe di colore diverso.
 
 Il driver VGA verrà creato utilizzando il linguaggio VHDL come il programma che genera il frame.
+
+## Clonare la repository
+Essendoci un sottomodulo si deve clonare la repository con `--recursive` quindi
+```
+git clone https://github.com/alanmasu/VGA_Frame_Generator.git --recursive
+```
